@@ -1,0 +1,103 @@
+<html lang = "en">
+    <head>
+        <meta charset = "UTF-8">
+        <meta http-equiv = "X-UA-Compatible" content = "IE=edge">
+        <meta name = "viewport" content = "width=dive-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+       <h2>HTML form</h2>
+        <table>
+            <form name = "login" action = "form.html" method = "post" onsubmit="return handleSubmit()">
+                <tr>
+                    <td>
+                        <label for="fname">
+                            First Name
+                        </label>
+                    </td>
+                    <td><input type="text" name="fname" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="fname">
+                            Last Name
+                        </label>
+                    </td>
+                    <td><input type="text" name="lname" />
+                    </td>
+                </tr>
+               
+                <tr>
+                    <td><label for="gender">
+                            Gender
+                        </label>
+                    </td>
+                    <td><input type="radio" id="gender" />
+                        <label for = "female">Female</label>
+                        <input type="radio" id="gender" />
+                        <label for = "male">Male</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="password">
+                            Password
+                        </label>
+                    </td>
+                    <td><input type="text" name="password" />
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="confirmPassword">
+                           Confirm Password
+                        </label>
+                    </td>
+                    <td><input type="text" name="confirmPassword" />
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="skills">
+                            Skills
+                        </label>
+                    </td>
+                    <td><input type="checkbox" id="skills" />
+                        <label for = "c">C</label>
+                        <input type="checkbox" id="skills" />
+                        <label for = "java">Java</label>
+                        <input type="checkbox" id="skills" />
+                        <label for = "js">JS</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type = "submit" value = "Register"/>
+                    </td>
+    
+                </tr>
+            </form>
+        </table>
+        <script type = "text/javascript" >
+            function handleSubmit() {
+                let loginForm = document.login;
+                let fname = loginForm.fname;
+                if (fname.value.length < 3) {
+                    alert("First name must be longer than 3 characters");
+                }
+                let lname = loginForm.fname;
+                if (lname.value.length < 2) {
+                    alert("Last name must be longer than 2 characters");
+                }
+                if (!(loginForm.gender[0].checked ||loginForm.gender[1].checked)) {
+                    alert("Please select a gender");
+                }
+                if (loginForm.password.value !== loginForm.confirmPassword.value) {
+                    alert("Passwords not the same");
+                }
+                if(!(loginForm.skills[0].checked || loginForm.skills[1].checked || loginForm.skills[0].checked)) {
+                    alert("Please select skills");
+                }
+                
+            }
+        </script>
+    </body>
+</html>
